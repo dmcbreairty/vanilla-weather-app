@@ -22,18 +22,25 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <h1>New Milford</h1>
-        <ul>
-          <li>Monday 08:00</li>
-          <li>Partly Cloudy</li>
-        </ul>
+        <div class="overview">
+          <h1>New York</h1>
+          <ul>
+            <li>Monday 08:00</li>
+            <li>Partly Cloudy</li>
+          </ul>
+        </div>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-              alt="Partly Cloudy"
-            />
-            <strong>12</strong>°F | °C
+            <div class="d-flex weather-temperature">
+              <img
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                alt="Partly Cloudy"
+                id="icon"
+                class="float-left"
+              />
+              <strong id="temperature">12</strong>
+              <span id="units">°F |<a href="">°C</a></span>
+            </div>
           </div>
           <div class="col-6">
             <ul>
