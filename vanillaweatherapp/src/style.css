@@ -19,12 +19,14 @@ ul {
 li {
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
   list-style: none;
   font-size: 16px;
   font-weight: 300;
   line-height: 19px;
   color: grey;
+}
+li::first-letter {
+  text-transform: capitalize;
 }
 
 .weather-app {
