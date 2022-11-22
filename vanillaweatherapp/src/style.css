@@ -1,5 +1,10 @@
 body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    109.6deg,
+    rgb(245, 239, 249) 30.1%,
+    rgb(207, 211, 236) 100.2%
+  );
 }
 
 h1 {
@@ -37,8 +42,9 @@ li::first-letter {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
-  border: 1px solid #e3e7ec;
+  border: 3px solid #e3e7ec;
   border-radius: 5px;
+  background: white;
 }
 
 .overview {

@@ -25,10 +25,10 @@ function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let pressureElement = document.querySelector("#pressure");
   let windElement = document.querySelector("#wind");
-  let descriptionElement = document.querySelector("#sky");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
@@ -36,12 +36,12 @@ function displayTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  pressureElement.innerHTML = response.data.temperature.pressure;
-  windElement.innerHTML = response.data.wind.speed;
   descriptionElement.innerHTML = Math.round(
     response.data.condition.description
   );
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  pressureElement.innerHTML = response.data.temperature.pressure;
+  windElement.innerHTML = response.data.wind.speed;
   dateElement.innerHTML = formatDate(response.time * 1000);
   iconElement.setAttribute(
     "src",
@@ -92,4 +92,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+search("New York County");
