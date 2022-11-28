@@ -21,7 +21,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function formatDate(timestamp) {
+function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -30,6 +30,7 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -41,7 +42,7 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-2">
               <div class="weather-forecast-date">${formatDay(
-                forecastDay.dt
+                forecastDay.time
               )}</div>
               <img
                 src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
@@ -69,7 +70,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "1ft66b38222ac020b260o674ba337ff5";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&unites=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
