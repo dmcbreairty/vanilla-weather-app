@@ -36,13 +36,11 @@ function displayTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
-  descriptionElement.innerHTML = Math.round(
-    response.data.condition.description
-  );
+  descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   pressureElement.innerHTML = response.data.temperature.pressure;
   windElement.innerHTML = response.data.wind.speed;
-  dateElement.innerHTML = formatDate(response.time * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute(
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
